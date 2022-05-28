@@ -176,13 +176,13 @@ body{ background-color: #7EDADB }
 
 <!--NAVIGATION BAR-->
 <ul>
-  <li><a href="http://localhost/ivms/login/Admin%20login/h.php">HOME</a></li>
-  <li><a href="http://localhost/IVMS/ApplicationLayer/ManageStaffInformation/myInfo.php">STAFF</a></li>
-  <li><a class="activeNav" href="http://localhost/IVMS/ApplicationLayer/ManageInventory/In_Item.php">INVENTORY</a></li>
-  <li><a href="http://localhost/IVMS/ApplicationLayer/ManageItemOrderList/Item%20Order%20List%20Home.php">ITEM ORDER LIST</a></li>
+  <li><a href="/SEM_PROJECT/login/Admin%20login/h.php">HOME</a></li>
+  <li><a href="../ManageStaffInformation/myInfo.php">STAFF</a></li>
+  <li><a class="activeNav" href="../ManageInventory/In_Item.php">INVENTORY</a></li>
+  <li><a href="../ManageItemOrderList/Item%20Order%20List%20Home.php">ITEM ORDER LIST</a></li>
   <li style="float:right"><a href="http://localhost/ivms/login/">LOGOUT</a></li>
-  <li style="float:right"><a href="http://localhost/IVMS/ApplicationLayer/Audit%20Report/auditlist.php">AUDIT</a></li>
-  <li style="float:right"><a href="http://localhost/IVMS/ApplicationLayer/GenerateReport/GenerateReport.php">REPORT</a></li>
+  <li style="float:right"><a href="../Audit%20Report/auditlist.php">AUDIT</a></li>
+  <li style="float:right"><a href="../GenerateReport/GenerateReport.php">REPORT</a></li>
   </ul>
 
 <!--COLUMN 1-->
