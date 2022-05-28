@@ -165,6 +165,51 @@ body{ background-color: #7EDADB }
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
+/* Dropdown Button */
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
 </style>
 </head>
 
@@ -186,18 +231,20 @@ body{ background-color: #7EDADB }
   </ul>
 
 <!--COLUMN 1-->
- <div class="column1">
-  <div>
-  <center><button class="btn active">In-Item</button>
-          <button class="btn success"><a href="Out_Item.php">Out-Item</a></button>
-		  <div class="dropdown">
-          <button class="btn success" style="color:blue;text-decoration:underline;">More</button>
-          <div class="dropdown-content">
-          <a href="add_Item.php">Add Item</a>
-          <a href="delete_Item.php">Delete Item</a>
-          </div>
-          </div>
-  </center>
+<div class="column1">
+<div>
+<center>
+<br>
+  <div class="dropdown">
+    <button class="dropbtn">Select an Option:</button>
+     <div id="myDropdown" class="dropdown-content">
+       <a href="In_Item.php">In-Item</a>
+       <a href="Out_Item.php">Out-Item</a>
+       <a href="add_Item.php">Add Item</a>
+       <a href="delete_Item.php">Delete Item</a>
+    </div>
+  </div>
+</center>
 </div>
 <!--DISPLAY-->  
   <table>
