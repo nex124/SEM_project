@@ -267,7 +267,7 @@ body{ background-color: #7EDADB }
 </div>
   <?php 
 
-$connection = mysqli_connect("localhost:3307","root","","myDatabase");
+$connection = mysqli_connect("localhost","root","","myDatabase");
 
 if(!$connection)
 {
