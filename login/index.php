@@ -72,8 +72,11 @@
 		
 			
 			     <h2 style="margin-top:10px">
-				<input class="button2"  type="button" value="Admin" onclick="location.href='http://localhost/ivms/login/Admin%20login/indx.php'">
-				<input class="button2" type="button" value="Staff" onclick="location.href='http://localhost/ivms/login/Staff%20login/indx.php'">
+				<!-- <input class="button2"  type="button" value="Admin" onclick="location.href='http://localhost/ivms/login/Admin%20login/indx.php'"> -->
+				<a class="button2"  type="button" value="Admin" href="Admin login/indx.php">Admin</a>
+			
+				<!-- <input class="button2" type="button" value="Staff" onclick="location.href='http://localhost/ivms/login/Staff%20login/indx.php'"> -->
+				<a class="button2" type="button" value="Staff" href="Staff login/indx.php">Staff</a>
 				</form>	
 				
 		
