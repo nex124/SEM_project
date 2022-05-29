@@ -34,7 +34,7 @@ if (isset($_POST['Staff_Username']) && isset($_POST['Staff_Password'])) {
             	$_SESSION['Staff_Username'] = $row['Staff_Username'];
             	$_SESSION['Staff_Name'] = $row['Staff_Name'];
             	$_SESSION['Staff_ID'] = $row['Staff_ID'];
-            	header("Location:http://localhost/ivms/login/Staff%20login/h2.php");
+            	header("Location:h2.php");
 		        exit();
             }else{
 				header("Location: indx.php?error=Incorect User name or password");
