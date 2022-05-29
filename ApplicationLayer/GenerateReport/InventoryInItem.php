@@ -3,6 +3,7 @@
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style type="text/css">
 	<style>
@@ -126,18 +127,31 @@ h2{font-family: Myriad Pro Light;}
   box-sizing: border-box;
 }
 
-#myInput {
-  background-image: url('/css/searchicon.jpg');
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  width: 100%;
-  font-size: 16px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
+ .search-container {
+  float: center;
 }
 
+ input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
 
+ .search-container button {
+  float: center;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+ .search-container button:hover {
+  background: #ccc;
+}
 
 </style>
 </head>
@@ -176,7 +190,15 @@ h2{font-family: Myriad Pro Light;}
 				<br><br>
 				<br><h2 style="text-align: center;">INVENTORY IN-ITEM</h2><br>
 
-				<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search with ITEM ID..." title="Type in a name">
+				<center>
+				<div class="search-container">
+    <form action="/action_page.php">
+				<input  type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by ITEM ID..." title="Type in a name">
+				<button type="submit"><i class="fa fa-search"></i></button>
+</div>
+</form>
+</center><br><br>
+
 				<th>ITEM ID</th>
 				<th>ITEM NAME</th>
 				<th>QUANTITY ORDER</th>
