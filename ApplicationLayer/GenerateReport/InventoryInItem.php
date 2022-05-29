@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style type="text/css">
 	<style>
 	table { /*guna untuk table*/
@@ -117,8 +121,27 @@ h2{font-family: Myriad Pro Light;}
   background-color: #508585;
   color: white;
 }
+
+{
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.jpg');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+
+
 </style>
-<head>
+</head>
+
 	<form action="" method="post">
 	<title>Generate Report</title>
 	<div class="header" >
@@ -148,10 +171,12 @@ h2{font-family: Myriad Pro Light;}
           <br><br>
       </div>
     </div>
-	<table>
-				</tr>
+	<table  id="myTable">
+				<tr>
 				<br><br>
-				<br><h2 style="text-align: center;">INVENTORY IN-ITEM</h2>
+				<br><h2 style="text-align: center;">INVENTORY IN-ITEM</h2><br>
+
+				<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search with ITEM ID..." title="Type in a name">
 				<th>ITEM ID</th>
 				<th>ITEM NAME</th>
 				<th>QUANTITY ORDER</th>
@@ -226,6 +251,28 @@ if(!$connection)
 <div class="footer">
 <p style="color:white;margin-top:25px;">2021 &#169; BING'S CORP</p>
 </div>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
 </body>
 </html>
 
