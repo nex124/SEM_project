@@ -36,7 +36,7 @@ class DB
 ?>
 <?php 
 
-$connection = mysqli_connect("localhost:3307","root","","test");
+$connection = mysqli_connect("localhost","root","","myDatabase");
 
 if(!$connection)
 {
