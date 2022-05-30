@@ -1,6 +1,7 @@
 <?php
 	require_once '../../BusinessServiceLayer/controller/staffController.php';	
 
+
 	$staff = new staffController();
 
 	//Call view function
@@ -23,10 +24,39 @@
 	<h1 >INVENTORY MANAGEMENT SYSTEM</h1>
 	</div>
 </head>
+<style type="text/css">
+	.column1 {
+			text-align: center;
+			background-color: white;
+			margin-left: 5px; margin-right: 5px; margin-top: 0px; margin-bottom: 2px ;
+		  float: left;
+		  width: 32%;
+		  padding: 2px;
+		  height: 190px;
+		}
+		.column2 {
+			text-align: center;
+			background-color: white;
+			margin-left: 5px; margin-right: 5px; margin-top: 0px;margin-bottom: 2px ;
+		  float: left;
+		  width: 32%;
+		  padding: 2px;
+		  height: 190px;
+		}
+		.column3 {
+			text-align: center;
+			background-color: white;
+			margin-left: 5px; margin-right: 5px;  margin-top: 0px;margin-bottom: 2px ;
+		  float: left;
+		  width: 34%;
+		  padding: 2px;
+		  height: 190px; /* Should be removed. Only for demonstration */
+		}
+</style>
 <body>
 	<!-- NAVIGATION BAR-->
 <ul>
-	   <li><a href="http://localhost/ivms/login/Admin%20login/h.php">HOME</a></li>
+	  <li><a href="http://localhost/ivms/login/Admin%20login/h.php">HOME</a></li>
   <li><a class="activeNav" href="http://localhost/IVMS/ApplicationLayer/ManageStaffInformation/myInfo.php">STAFF</a></li>
   <li><a href="http://localhost/IVMS/ApplicationLayer/ManageInventory/In_Item.php">INVENTORY</a></li>
   <li><a href="http://localhost/IVMS/ApplicationLayer/ManageItemOrderList/Item%20Order%20List%20Home.php">ITEM ORDER LIST</a></li>
@@ -34,18 +64,19 @@
   <li style="float:right"><a href="http://localhost/IVMS/ApplicationLayer/Audit%20Report/auditlist.php">AUDIT</a></li>
   <li style="float:right"><a href="http://localhost/IVMS/ApplicationLayer/GenerateReport/GenerateReport.php">REPORT</a></li>
 	</ul>
-<!--COLUMN1, COLUMN2, COLUMN3-->
+	<!--COLUMN1, COLUMN2, COLUMN3-->
+
 	<div>
-		<div class="column1" style="padding-left: 20px">
+		<div class="column1" style="padding-left: 20px; margin-top: 10px">
 	    <h2>MY INFORMATION</h2>
 	    <p>
-	    	<table  class="center" width="100%" >
+	    	<table  class="center" width="100%"  >
 	    		
 	    		<tr><td align="center"><i class="fa fa-edit"></i> <input class="button" type="button" name="viewMyInfo" onclick="document.location='myInfo.php'" value="View/Edit My Information  "></td></tr>
 	</table>
 </p>
 	  </div>
-	  <div class="column2">
+	  <div class="column2" style="margin-top: 10px">
 	    <h2>NEW STAFF INFORMATION</h2>
 	    <p>
 	    	<table  class="center" width="100%" >
@@ -54,24 +85,31 @@
 	    		<input class="button" type="button" onclick="document.location='addStaff.php'" value=" Add New Staff Information "></td></tr></table>
 	    </p>
 	  </div>
-	  <div class="column3" >
+	  <div class="column3" style="padding-right:20px; margin-top: 10px">
 	    <h2>CURRENT STAFF INFORMATION</h2>
 	    <p>
-	    	<table  class="center" width="100%" >
+	    	<table  align="center">
 	    		
 	    		<tr>
 	    			<td align="center">
 	    				<i class="fa fa-trash"></i>&nbsp
-	    		   		<input class="button" type="button" onclick="document.location='deleteStaff.php'" value="    Delete Staff Information     "></td></tr>
+	    		   		<input class="button" type="button" onclick="document.location='deleteStaff.php'" value="        Delete Staff Information   "></td></tr>
 	    		<tr>
 	    			<td align="center">
 	    		   		<i class="fa fa-edit"></i>
-	    		   		<input class="button" type="button" onclick="document.location='viewStaff.php'" value     ="  View/Edit Staff Information  "></td></tr>
+	    		   		<input class="button" type="button" onclick="document.location='viewStaff.php'" value     ="  View/Edit Staff Information   "></td></tr>
+	    		<tr>
+	    			<td align="center">
+	    		   		<i class="fa fa-print"></i>
+	    		   		<input class="button" type="button" onclick="document.location='printStaff.php'" value     ="        Print Staff Information      "></td>
+	    		   	</tr>
 	    	</table>
 	    </p>
 	  </div>
-<div>
+	</div>
+
 	<br><br><br><br><br><br><br><br><br><br>
+
 <div style="background-color:white; padding-bottom: 10%; margin :5px; margin-top: 25px">
 	<h2 style="text-align: center; padding-top: 25px">VIEW STAFF INFORMATION</h2>
 <div >
@@ -95,10 +133,12 @@
 			$sql = "SELECT * FROM staff WHERE id='$id'";
 	    	$sql_run = mysqli_query($link, $sql);
 
+
 	    	while($row = mysqli_fetch_array($sql_run))
 	    	{
 	    	?>
-	    <form>
+	    	
+	    <form action="" method="post">
 		<tr>
 			<th>Name</th>
 			<td width="100%"><?php echo $row['name']; ?></td>
@@ -155,6 +195,7 @@
 			<td colspan="3" style="text-align: center">
 			<i class="fa fa-edit"></i>
 			<input class="button" type="button" value="Edit" onclick="document.location='editStaff.php'">
+			
 			</td>
 		</tr>
 		</form>
@@ -162,6 +203,7 @@
 			}
 		}
 	?>
+	
 		
 	</table>
 </div>

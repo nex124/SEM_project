@@ -24,9 +24,7 @@
 </head>
 <body>
 	
-<form action="" method="post" align="center">
-		ID Number : <input style="width: 50%" type="text" name="id" placeholder="enter staff ID"> 
-	<input class="button" type="submit" name="print" value="  Print  ">
+
 <div style="background-color:white; padding-bottom: 10%; margin :5px; margin-top: 10px">
 	<hr>
 <h3 style="text-align: center">Inventory Management System</h3>
@@ -40,18 +38,18 @@
 		$link = mysqli_connect("localhost", "root", "");
 		$db = mysqli_select_db($link, "myDatabase");
 
-		if(isset($_POST['print']))
-		{
-			$id = $_POST['id'];
-			$sql = "SELECT * FROM staff WHERE id='$id'";
+			$sql = "SELECT * FROM staff WHERE id='A1000'";
 	    	$sql_run = mysqli_query($link, $sql);
-
 
 	    	while($row = mysqli_fetch_array($sql_run))
 	    	{
 	    	?>
-	    	
-	    <form action="" method="post">
+
+	    <form>
+	    	<tr><th colspan="2"><h3>Staff Information</th3></h3>
+	    	</tr>
+	    	<tr>
+	    	</tr>
 		<tr>
 			<th>Name</th>
 			<td width="100%"><?php echo $row['name']; ?></td>
@@ -111,9 +109,9 @@
 			<input class="button" type="button" value="Close" onclick="document.location='myInfo.php'">
 			</td>
 		</tr>
-		</form>
+				</form>
 		<?php
-			}
+
 		}
 	?>
 		

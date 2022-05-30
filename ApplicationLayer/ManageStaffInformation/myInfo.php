@@ -25,6 +25,35 @@
 	</div>
 
 </head>
+<style type="text/css">
+	.column1 {
+			text-align: center;
+			background-color: white;
+			margin-left: 5px; margin-right: 5px; margin-top: 0px; margin-bottom: 2px ;
+		  float: left;
+		  width: 32%;
+		  padding: 2px;
+		  height: 190px;
+		}
+		.column2 {
+			text-align: center;
+			background-color: white;
+			margin-left: 5px; margin-right: 5px; margin-top: 0px;margin-bottom: 2px ;
+		  float: left;
+		  width: 32%;
+		  padding: 2px;
+		  height: 190px;
+		}
+		.column3 {
+			text-align: center;
+			background-color: white;
+			margin-left: 5px; margin-right: 5px;  margin-top: 0px;margin-bottom: 2px ;
+		  float: left;
+		  width: 34%;
+		  padding: 2px;
+		  height: 190px; /* Should be removed. Only for demonstration */
+		}
+</style>
 <body>
 	<!-- NAVIGATION BAR-->
 <ul>
@@ -37,17 +66,18 @@
   <li style="float:right"><a href="http://localhost/IVMS/ApplicationLayer/GenerateReport/GenerateReport.php">REPORT</a></li>
 	</ul>
 	<!--COLUMN1, COLUMN2, COLUMN3-->
+
 	<div>
-		<div class="column1" style="padding-left: 20px">
+		<div class="column1" style="padding-left: 20px; margin-top:8px">
 	    <h2>MY INFORMATION</h2>
 	    <p>
-	    	<table  class="center" width="100%" >
+	    	<table  class="center" width="100%"  >
 	    		
 	    		<tr><td align="center"><i class="fa fa-edit"></i> <input class="button" type="button" name="viewMyInfo" onclick="document.location='myInfo.php'" value="View/Edit My Information  "></td></tr>
 	</table>
 </p>
 	  </div>
-	  <div class="column2">
+	  <div class="column2" style="margin-top: 8px">
 	    <h2>NEW STAFF INFORMATION</h2>
 	    <p>
 	    	<table  class="center" width="100%" >
@@ -56,26 +86,32 @@
 	    		<input class="button" type="button" onclick="document.location='addStaff.php'" value=" Add New Staff Information "></td></tr></table>
 	    </p>
 	  </div>
-	  <div class="column3" >
+	  <div class="column3" style="margin-top: 8px">
 	    <h2>CURRENT STAFF INFORMATION</h2>
 	    <p>
-	    	<table  class="center" width="100%" >
+	    	<table  align="center">
 	    		
 	    		<tr>
 	    			<td align="center">
 	    				<i class="fa fa-trash"></i>&nbsp
-	    		   		<input class="button" type="button" onclick="document.location='deleteStaff.php'" value="    Delete Staff Information     "></td></tr>
+	    		   		<input class="button" type="button" onclick="document.location='deleteStaff.php'" value="        Delete Staff Information   "></td></tr>
 	    		<tr>
 	    			<td align="center">
 	    		   		<i class="fa fa-edit"></i>
-	    		   		<input class="button" type="button" onclick="document.location='viewStaff.php'" value     ="  View/Edit Staff Information  "></td></tr>
+	    		   		<input class="button" type="button" onclick="document.location='viewStaff.php'" value     ="  View/Edit Staff Information   "></td></tr>
+	    		<tr>
+	    			<td align="center">
+	    		   		<i class="fa fa-print"></i>
+	    		   		<input class="button" type="button" onclick="document.location='printStaff.php'" value     ="        Print Staff Information      "></td>
+	    		   	</tr>
 	    	</table>
 	    </p>
 	  </div>
-<div>
+	</div>
+
 	<br><br><br><br><br><br><br><br><br><br>
 
-<div style="background-color:white; padding-bottom: 10%; margin :5px; margin-top: 25px">
+<div style="background-color:white; padding-bottom: 10%; margin :5px; margin-top: 10px">
 <h2 style="text-align: center; padding-top: 25px">MY INFORMATION</h2>
 <!--Table to display my information-->
 	<table class="center">
@@ -93,7 +129,7 @@
 		<tr>
 			<th>Name</th>
 			<td width="100%"><?php echo $row['name']; ?></td>
-			<td rowspan="8" ><i class="fa fa-user" style="font-size: 150px; padding-left: 30%;"></i>
+			<td rowspan="8" ><i class="fa fa-user" style="font-size: 150px; padding-left: 10%;"></i>
 				</td>
 		</tr>
 		<tr>
@@ -146,6 +182,7 @@
 			<td colspan="3" style="text-align: center">
 			<i class="fa fa-edit"></i>
 			<input class="button" type="button" value="Edit" onclick="document.location='editStaff.php'">
+			<input class="button" type="button" value="Print" onclick="document.location='printMyInfo.php'">
 			</td>
 		</tr>
 				</form>
