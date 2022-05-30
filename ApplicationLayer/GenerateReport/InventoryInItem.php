@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style type="text/css">
 	<style>
 	table { /*guna untuk table*/
@@ -117,8 +122,40 @@ h2{font-family: Myriad Pro Light;}
   background-color: #508585;
   color: white;
 }
+
+{
+  box-sizing: border-box;
+}
+
+ .search-container {
+  float: center;
+}
+
+ input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+ .search-container button {
+  float: center;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+ .search-container button:hover {
+  background: #ccc;
+}
+
 </style>
-<head>
+</head>
+
 	<form action="" method="post">
 	<title>Generate Report</title>
 	<div class="header" >
@@ -148,10 +185,20 @@ h2{font-family: Myriad Pro Light;}
           <br><br>
       </div>
     </div>
-	<table>
-				</tr>
+	<table  id="myTable">
+				<tr>
 				<br><br>
-				<br><h2 style="text-align: center;">INVENTORY IN-ITEM</h2>
+				<br><h2 style="text-align: center;">INVENTORY IN-ITEM</h2><br>
+
+				<center>
+				<div class="search-container">
+    <form action="/action_page.php">
+				<input  type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by ITEM ID..." title="Type in a name">
+				<button type="submit"><i class="fa fa-search"></i></button>
+</div>
+</form>
+</center><br><br>
+
 				<th>ITEM ID</th>
 				<th>ITEM NAME</th>
 				<th>QUANTITY ORDER</th>
@@ -226,6 +273,28 @@ if(!$connection)
 <div class="footer">
 <p style="color:white;margin-top:25px;">2021 &#169; BING'S CORP</p>
 </div>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
 </body>
 </html>
 

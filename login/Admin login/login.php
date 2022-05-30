@@ -34,7 +34,7 @@ if (isset($_POST['Admin_Username']) && isset($_POST['Admin_Password'])) {
             	$_SESSION['Admin_Username'] = $row['Admin_Username'];
             	$_SESSION['Admin_Name'] = $row['Admin_Name'];
             	$_SESSION['Admin_ID'] = $row['Admin_ID'];
-            	header("Location:http://localhost/ivms/login/Admin%20login/h.php");
+            	header("Location:h.php");
 		        exit();
             }else{
 				header("Location: indx.php?error=Incorect User name or password");

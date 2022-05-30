@@ -45,8 +45,8 @@ if(!$connection)
 	echo "Database connection failed...";
 }
 
-$retrive = mysqli_query($connection, "SELECT * FROM itemorderlist ");
-$row= mysqli_fetch_array($retrive);
+$retrieve = mysqli_query($connection, "SELECT * FROM itemorderlist ");
+$row= mysqli_fetch_array($retrieve);
 
 
 
