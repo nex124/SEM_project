@@ -27,6 +27,7 @@
 <form action="" method="post" align="center">
 		ID Number : <input style="width: 50%" type="text" name="id" placeholder="enter staff ID"> 
 	<input class="button" type="submit" name="print" value="  Print  ">
+	<input class="button" type="button" value="  Back  " onclick="document.location='myInfo.php'">
 <div style="background-color:white; padding-bottom: 10%; margin :5px; margin-top: 10px">
 	<hr>
 <h3 style="text-align: center">Inventory Management System</h3>

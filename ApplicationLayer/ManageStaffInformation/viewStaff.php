@@ -50,7 +50,7 @@
 		  float: left;
 		  width: 34%;
 		  padding: 2px;
-		  height: 190px; /* Should be removed. Only for demonstration */
+		  height: 190px;
 		}
 </style>
 <body>

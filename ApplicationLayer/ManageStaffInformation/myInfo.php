@@ -51,20 +51,20 @@
 		  float: left;
 		  width: 34%;
 		  padding: 2px;
-		  height: 190px; /* Should be removed. Only for demonstration */
+		  height: 190px;
 		}
 </style>
 <body>
 	<!-- NAVIGATION BAR-->
-	<ul>
-	  <li><a href="../../login/Admin login/h.php">HOME</a></li>
+<ul>
+  <li><a href="../../login/Admin login/h.php">HOME</a></li>
   <li><a class="activeNav" href="../ManageStaffInformation/myInfo.php">STAFF</a></li>
   <li><a href="../ManageInventory/In_Item.php">INVENTORY</a></li>
   <li><a href="../ManageItemOrderList/Item Order List Home.php">ITEM ORDER LIST</a></li>
   <li style="float:right"><a href="../login/">LOGOUT</a></li>
   <li style="float:right"><a href="../Audit Report/auditlist.php">AUDIT</a></li>
   <li style="float:right"><a href="../GenerateReport/GenerateReport.php">REPORT</a></li>
-	</ul>
+</ul>
 	<!--COLUMN1, COLUMN2, COLUMN3-->
 
 	<div>
