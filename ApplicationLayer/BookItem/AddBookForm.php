@@ -76,7 +76,7 @@ h1{
 		/*display*/
 		background-color: #508585;
 		height: 120px;
-		padding: 2px 25px 7px;
+		padding: 2px 25px 8px;
 	}
 .button {
   background-color: #508585;
