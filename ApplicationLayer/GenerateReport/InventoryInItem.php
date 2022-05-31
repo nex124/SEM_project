@@ -258,7 +258,7 @@ if(!$connection)
             <table>
             <tr>
 				<th colspan="4" style="text-align:center; padding-right: 462px">TOTAL GRAND PRICE(RM):</th>
-            	<td colspan="5" style="text-align:right; padding-right: 90px"><?= $row['TotalGrandPrice'];?></td>
+            	<td colspan="5" style="text-align:right; padding-right: 90px"><?= $row['TotalGrandPrice'];?></td> <th colspan="5" style="text-align:left; padding-left: 550px"><button onclick="window.print()">Print this page</button></th>
         	</tr>
   
                 <?php
