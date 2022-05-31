@@ -206,7 +206,7 @@ if(!$connection)
 }
 
 $retrive = mysqli_query($connection, "SELECT * FROM booking ");
-$row= mysqli_fetch_array($retrive);
+$row= mysqli_fetch_array($retrieve);
 
 ?>
 			<?php
