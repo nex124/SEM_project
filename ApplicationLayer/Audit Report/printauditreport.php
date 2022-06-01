@@ -6,6 +6,7 @@ $audit = new auditcontroller();
 if(isset($_POST['Submit'])){
    
     $audit->add();
+	add;
 	
 }
 ?>
