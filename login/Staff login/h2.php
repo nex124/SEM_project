@@ -125,11 +125,10 @@ body{ background-color: #7EDADB }
   <h1>INVENTORY MANAGEMENT SYSTEM</h1>
 </div>
 
-<ul>
-	  
-	 <Li><a class="activeNav" href="http://localhost/ivms/login/Admin%20login/h.php">HOME</a></li>
-	  <li><a href="http://localhost/IVMS/ApplicationLayer/BookItem/BookItem.php">BOOKING</a></li>
-	  <li style="float:right"><a href="http://localhost/ivms/login/">LOGOUT</a></li>
+<ul> 
+     <li><a href="/SEM_PROJECT/login/Staff%20login/h2.php">HOME</a></li>
+	  <li><a href="/SEM_PROJECT/ApplicationLayer/BookItem/BookItem.php">BOOKING</a></li>
+	  <li style="float:right"><a href="/SEM_PROJECT/login/Admin%20login/indx.php">LOGOUT</a></li>
 	</ul>
 
 		

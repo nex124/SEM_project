@@ -34,7 +34,11 @@ if (isset($_POST['Admin_Username']) && isset($_POST['Admin_Password'])) {
             	$_SESSION['Admin_Username'] = $row['Admin_Username'];
             	$_SESSION['Admin_Name'] = $row['Admin_Name'];
             	$_SESSION['Admin_ID'] = $row['Admin_ID'];
+<<<<<<< Updated upstream
             	header("Location:h.php");
+=======
+            	header("Location:/SEM_PROJECT/login/Admin%20login/h.php");
+>>>>>>> Stashed changes
 		        exit();
             }else{
 				header("Location: indx.php?error=Incorect User name or password");
