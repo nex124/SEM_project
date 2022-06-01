@@ -62,7 +62,6 @@ if(isset($_POST['delete']))
             height: 40px;width: 10%;border: none;
         }
 
-        
     </style>
     <!-- 1. HEADER-->
     <div class="header" >
@@ -85,7 +84,7 @@ if(isset($_POST['delete']))
     <!--SAMPAI SINI-->
     
     <br><br>
-<div style="background-color:white; padding-bottom: 8%; margin-left:0px; margin-right:0px; margin-top: 25px"  >
+<div style="background-color:white; padding-bottom: 8%; margin-left:0px; margin-right:0px"  >
 <h2><center><br><br><br>&nbsp DELETE AUDIT REPORT</center></h2>
 
 <!--AUDIT MENU-->
@@ -102,17 +101,16 @@ if(isset($_POST['delete']))
     
     <table>
         <tr>
-                <td><center>Enter the Audit ID :</center></td>
+                <td><center>Enter the Audit ID:</center></td>
             </tr>
             <tr>
-                <td><input class="userin" type="text" name="audit_report_id"><input type="submit" name="delete" value="Delete" class="delbtn" ></td>
+                <td><input class="userin" type="text" name="audit_report_id">&nbsp&nbsp&nbsp<input class="delbtn" type="submit" name="delete" value="Delete"></td>
                 <td></td>
                 
         </tr>
     </table>
 </form>
 <!--FORM END-->
-
 
 <!-- 3. FOOTER-->
 </div>

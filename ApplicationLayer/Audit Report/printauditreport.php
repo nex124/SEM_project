@@ -90,13 +90,14 @@ if(isset($_POST['Submit'])){
 	
 	<br><br>
 <div style="background-color:white; padding-bottom: 3%; margin-left:0px; margin-right:0px; margin-top: 25px"  >
-<h2><center><br>&nbsp AUDIT REPORT</center></h2>
+<h2><center><br>&nbsp PRINT AUDIT REPORT</center></h2>
 
 <!--AUDIT MENU-->
 <div class="auditmenu" style="margin-top: 5%;">
     <a class="button" href="auditreport.php" style="background-color: grey;">Add Report</a><br>
     <a class="button" href="auditlist.php" >View Report</a><br>
     <a class="button"  href="deleteauditreport.php">Delete Report</a>
+    <a class="button" href="printauditreport.php" style="background-color: grey;">Print Report</a><br>
 </div>
 <!--SAMPAI SINI-->
 
@@ -106,34 +107,13 @@ if(isset($_POST['Submit'])){
 	<table>
 		<tr>
 			<th>Audit Report ID</th>
-			<td width="100%"><input type="text" name="audit_report_id" placeholder="Audit Report ID" required><td>
+			<td width="100%"><input type="text" name="audit_report_id" placeholder="Audit Report ID"><td>
 		</tr>
-		<tr>
-			<th>Report ID</th>
-			<td width="100%"><input type="text" name="report_id" placeholder="Report ID" required></td>
-		</tr>
-		<tr>
-			<th>Description</th>
-			<td width="100%"><input type="text" name="description" placeholder="Report Description" required></td>
-		</tr>
-		<tr>
-			<th>Date</th>
-			<td><input width="100%" type="date" name="reportdate" required></td>
-		</tr>
-		<tr>
-			<th>Report Status</th>
-			<td>
-				<select name="status" required>
-					<option value="Unqualified opinion">Unqualified opinion</option>
-					<option value="Qualified opinion">Qualified opinion</option>
-					<option value="Adverse Opinion">Adverse Opinion</option>
-					<option value="Disclaimer of opinion">Disclaimer of opinion</option>
-				</select>
 			</td>
 		</tr>
 		<tr>
 			<td colspan="3" style="text-align: center; padding-top: 10px;">
-			<i class="fa fa-save" style="padding-right: 10px;"></i> <input class="button" type="submit" name="Submit" value="Save">
+			<i class="fa fa-save" style="padding-right: 10px;"></i> <input class="button" type="submit" name="Submit" value="Print">
 			</td>
 		</tr>
 		</form>
