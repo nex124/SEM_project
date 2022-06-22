@@ -232,7 +232,7 @@ input,select{
   </center>
 <div>
 	<br><br><br><br><br><br><br><br><br><br>
-<div style="background-color:white; padding-bottom: 10%; margin :5px; margin-top: 25px">
+    <div style="background-color:white; padding-bottom: 10%; margin :5px; margin-top: 25px">
 <h2 style="text-align: center; padding-top: 25px">EDIT STAFF INFORMATION</h2>
 <div >
 	<center>
@@ -242,51 +242,65 @@ input,select{
 	<input class="button" type="submit" name="view" value="  Edit  ">
 </form>
 </center>
-<div style="background-color:white; padding-bottom: 10%; margin :5px; margin-top: 25px">
-<h2 style="text-align: center; padding-top: 25px">EDIT STAFF INFORMATION</h2>
+</div>
+<br>
 <!--Form to edit staff information-->
 	<form action="" method="POST">
 		<table class="center">
+		<?php
+		$link = mysqli_connect("localhost", "root", "");
+		$db = mysqli_select_db($link, "myDatabase");
+
+		if(isset($_POST['view']))
+		{
+			$id = $_POST['id'];
+			$sql = "SELECT * FROM staff WHERE id='$id'";
+	    	$sql_run = mysqli_query($link, $sql);
+
+	    	while($row = mysqli_fetch_array($sql_run))
+	    	{
+	    	?>
 		<tr>
-			<th>Name</th>
-			<td width="100%"><input type="text" name="name" placeholder="enter name"></td>
+			<th>Booking ID</th>
+			<td width="100%"><input type="text" name="BookingID" value="<?php echo $row['BookingID']; ?>"></td>
 			<td rowspan="8" ><i class="fa fa-user" style="font-size: 150px; padding-left: 30%;"></i>
 				</td>
 		</tr>
 		<tr>
-			<th>ID Number</th>
-			<td><input type="text" name="id" placeholder="enter id number"></td>
+			<th>Item ID</th>
+			<td><input type="text" name="ItemID" value="<?php echo $row['ItemID']; ?>"></td>
 		</tr>
 		<tr>
-			<th>Phone Number</th>
-			<td><input type="text" name="phone" placeholder="enter phone number"></td>
+            <th>Staff ID</th>
+			<td><input type="text" name="id" value="<?php echo $row['id']; ?>"></td>
 		</tr>
 		<tr>
-			<th>Address</th>
-			<td><input type="text" name="address" placeholder="enter address"></td>
+			<th>Item Quantity</th>
+			<td><input type="text" name="ItemQuantity" value="<?php echo $row['ItemQuantity']; ?>"></td>
 		</tr>
 		<tr>
-			<th>Email</th>
-			<td><input type="text" name="email" placeholder="enter email"></td>
+			<th>Date Booking</th>
+			<td><input type="text" name="DateBooking" value="<?php echo $row['DateBooking']; ?>"></td>
 		</tr>
 		<tr>
-			<th>Office Tel</th>
-			<td><input type="text" name="officeTel" placeholder="enter office tel"></td>
+			<th>Booking Time</th>
+			<td><input type="text" name="BookingTime" value="<?php echo $row['BookingTime']; ?>"></td>
 		</tr>
 		<tr>
-			<th>Office Fax</th>
-			<td><input type="text" name="officeFax" placeholder="enter office tax"></td>
+			<th>Pickup Date</th>
+			<td><input type="text" name="PickUpDate" value="<?php echo $row['PickUpDate']; ?>"></td>
 		</tr>
+		
 		<tr>
-			<th>Group</th>
-			<td><input type="text" name="groupsList" placeholder="enter group"></td>
-		</tr>
-			<tr>
 			<td colspan="3" style="text-align: center">
 			<i class="fa fa-edit">&nbsp</i>
 			<input class="button" type="submit" name="edit" value="  Edit  ">
 			</td>
 		</tr>
+		<?php
+			}
+		}
+	?>
 	</table>
 		</form>
 </div>
