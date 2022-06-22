@@ -27,4 +27,23 @@ class bookingmodel {
         $sql = "select * from booking";
         return DB::run($sql);
     }
+
+	//edit booking information
+	function editBooking($BookingID,$id,$ItemID,$ItemQuantity,$DateBooking,$BookingTime,$PickUpDate)
+	{
+		$sql = "BEGIN;
+				UPDATE booking SET BookingID='$BookingID',  id='$id', ItemID='$ItemID', ItemQuantity= '$ItemQuantity',DateBooking= '$DateBooking', BookingTime= '$BookingTime', PickUpDate= '$PickUpDate'  WHERE id='$id';
+				COMMIT";
+				
+		DB::run($sql);
+
+		if(DB::run($sql))
+		{
+			echo '<script type="text/javascript"> alert("Data Updated") </script>';
+		}
+		else
+		{
+			echo '<script type="text/javascript"> alert("Data Not Updated") </script>';
+		}
+	}
 }

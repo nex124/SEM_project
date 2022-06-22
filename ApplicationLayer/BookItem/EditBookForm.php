@@ -3,16 +3,10 @@ require_once '../../BusinessServiceLayer/controller/BookController.php';
 
 $add = new controller();
 
-//Call add function
-if(isset($_POST['Submit'])){
-   
-    $add->add();
-	
-}
 //Call edit function
 if(isset($_POST['edit']))
 {
-  	$edit->edit();
+  	$booking->edit();
 }
 
 ?>
@@ -233,7 +227,7 @@ input,select{
 <div>
 	<br><br><br><br><br><br><br><br><br><br>
     <div style="background-color:white; padding-bottom: 10%; margin :5px; margin-top: 25px">
-<h2 style="text-align: center; padding-top: 25px">EDIT STAFF INFORMATION</h2>
+<h2 style="text-align: center; padding-top: 25px">EDIT BOOKING INFORMATION</h2>
 <div >
 	<center>
 		<!--Form to enter id to view-->
@@ -267,12 +261,12 @@ input,select{
 				</td>
 		</tr>
 		<tr>
-			<th>Item ID</th>
-			<td><input type="text" name="ItemID" value="<?php echo $row['ItemID']; ?>"></td>
-		</tr>
-		<tr>
             <th>Staff ID</th>
 			<td><input type="text" name="id" value="<?php echo $row['id']; ?>"></td>
+		</tr>
+        <tr>
+			<th>Item ID</th>
+			<td><input type="text" name="ItemID" value="<?php echo $row['ItemID']; ?>"></td>
 		</tr>
 		<tr>
 			<th>Item Quantity</th>

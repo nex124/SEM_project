@@ -7,7 +7,7 @@ class controller{
 function add(){
 	
 $add = new bookingmodel();
-// $add->order_id = $_POST['order_id'];	
+
 $BookingID = $_POST['BookingID'];
 $id = $_POST['id'];
 $ItemID = $_POST['ItemID'];
@@ -27,5 +27,24 @@ function viewAll(){
         $view = new bookingmodel();
         return $view->view();
     }
+    
+ //edit booking information
+ function edit(){
+		
+    $edit = new bookingmodel();
+
+    $BookingID = $_POST['BookingID'];
+    $id = $_POST['id'];
+    $ItemID = $_POST['ItemID'];
+    $ItemQuantity = $_POST['ItemQuantity'];
+    $DateBooking = $_POST['DateBooking'];
+    $BookingTime = $_POST['BookingTime'];
+    $PickUpDate = $_POST['PickUpDate'];
+
+
+  $edit = new bookingmodel();
+  $req = $edit->editbooking($BookingID,$id,$ItemID,$ItemQuantity,$DateBooking,$BookingTime,$PickUpDate);
+
+}
 
 }
