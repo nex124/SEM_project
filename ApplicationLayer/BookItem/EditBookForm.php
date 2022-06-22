@@ -281,25 +281,7 @@ input,select{
 			<th>Group</th>
 			<td><input type="text" name="groupsList" placeholder="enter group"></td>
 		</tr>
-		<tr>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-		</tr>
-		<tr>
+			<tr>
 			<td colspan="3" style="text-align: center">
 			<i class="fa fa-edit">&nbsp</i>
 			<input class="button" type="submit" name="edit" value="  Edit  ">
@@ -309,10 +291,6 @@ input,select{
 		</form>
 </div>
 </div>
-<!-- FOOTER-->
-</div>
-<div class="footer">
-	<p style="color:white;margin-top:25px;">2021 &#169;BING'S CORP</p>
 </div>
 </body>
 </html>
