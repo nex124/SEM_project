@@ -254,7 +254,7 @@ input,select{
 		if(isset($_POST['view']))
 		{
 			$id = $_POST['id'];
-			$sql = "SELECT * FROM staff WHERE id='$id'";
+			$sql = "SELECT * FROM booking WHERE id='$id'";
 	    	$sql_run = mysqli_query($link, $sql);
 
 	    	while($row = mysqli_fetch_array($sql_run))
