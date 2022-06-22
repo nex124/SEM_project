@@ -220,6 +220,7 @@ input,select{
 	<center>
 			<button class="btn active"><a href="http://localhost/IVMS/ApplicationLayer/BookItem/BookItem.php">View Item</button>
 			<button class="btn active"><a href="http://localhost/IVMS/ApplicationLayer/BookItem/AddBookForm.php">Add Booking</button>
+			<button class="btn active"><a href="http://localhost/IVMS/ApplicationLayer/BookItem/EditBookForm.php">Edit Booking</a></button>
       <button class="btn active"><a href="http://localhost/IVMS/ApplicationLayer/BookItem/ViewStatusBooking.php" target="_blank">View Booking </a></button>
   </center>
 		  <br><br>
