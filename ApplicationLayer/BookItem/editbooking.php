@@ -1,11 +1,11 @@
 <?php
-	require_once '../../BusinessServiceLayer/controller/AuditReportController.php';	
+	require_once '../../BusinessServiceLayer/controller/BookController.php';	
 
-	$audit = new AuditController();
+	$booking = new BookController();
 
 	if(isset($_POST['edit']))
 	{
-  		$audit->edit();
+  		$booking->edit();
 	}
 ?>
 <!DOCTYPE html>
@@ -13,7 +13,7 @@
 <head>
 	<link rel="stylesheet" href="../../css/allExcludeLogin.css">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-	<title>IVMS | Edit Audit Report</title>
+	<title>IVMS | Edit Booking</title>
 	<style>
 	body {
   margin: 0;
@@ -68,7 +68,7 @@
 	</style>
 	<!-- 1. HEADER-->
 	<div class="header" >
-	<h1>AUDIT REPORT</h1>
+	<h1>Booking</h1>
 	</div>
 	<!-- SAMPAI SINI -->
 </head>
@@ -88,15 +88,7 @@
 	
 	<br><br>
 <div style="background-color:white; padding-bottom: 8%; margin-left:0px; margin-right:0px; margin-top: 25px"  >
-<h2><center><br><br><br>&nbsp EDIT AUDIT REPORT</center></h2>
-
-<!--AUDIT MENU-->
-<div class="auditmenu">
-    <a class="button" href="auditreport.php">Add Report</a><br>
-    <a class="button" href="auditlist.php">View Report</a><br>
-    <a class="button"  href="deleteauditreport.php">Delete Report</a>
-</div>
-<!--SAMPAI SINI-->
+<h2><center><br><br><br>&nbsp EDIT BOOKING LIST</center></h2>
 
 <!--FORM-->
 <!--TO EDIT DATA-->
@@ -113,11 +105,11 @@
 		</tr>
 		<tr>
 			<th>Item ID:</th>
-			<td width="100%"><input type="text" name="ItemID" placeholder="Item ID></td>
+			<td width="100%"><input type="text" name="ItemID" placeholder="Item ID"></td>
 		</tr>
         <tr>
 			<th>Item Quantity:</th>
-			<td width="100%"><input type="text" name="ItemQuantity" placeholder="Item Quantity></td>
+			<td width="100%"><input type="text" name="ItemQuantity" placeholder="Item Quantity"></td>
 		</tr>
 		<tr>
 			<th>Booking Date:</th>
@@ -125,7 +117,7 @@
 		</tr>
         <tr>
 			<th>Booking Time:</th>
-			<td width="100%"><input type="time" name="BookingTime" </td>
+			<td input width="100%"><input type="time" name="BookingTime" </td>
 		</tr>
         <tr>
 			<th>Pickup Date:</th>
