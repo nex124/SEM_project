@@ -23,7 +23,7 @@ $req = $add->addbooking($BookingID,$id,$ItemID,$ItemQuantity,$DateBooking,$Booki
 
 
 function viewAll(){
-        //To retrieve all good information from goodModel class.
+        //To retrieve all good information from bookModel class.
         $view = new bookingmodel();
         return $view->view();
     }
