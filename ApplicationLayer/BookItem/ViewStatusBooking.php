@@ -194,6 +194,7 @@ h2{font-family: Myriad Pro Light;}
 				<th>Date Booking</th>
 				<th>Booking Time</th>
 				<th>Pickup Date</th>
+				<th>Edit</th>
 				
 			</tr>
 			<?php 
@@ -216,11 +217,12 @@ $row= mysqli_fetch_array($retrieve);
                     <tr>
                     <td><?= $row['BookingID'];?></td>
                     <td><?= $row['ItemID'];?></td>
-										<td><?= $row['id'];?></td>
+					<td><?= $row['id'];?></td>
                     <td><?= $row['ItemQuantity'];?></td>
                     <td><?= $row['DateBooking'];?></td>
                     <td><?= $row['BookingTime'];?></td>
                     <td><?= $row['PickUpDate'];?></td>
+					<td><a class="editbtn" href="editbooking.php?BookingID=<?php echo $row["BookingID"]; ?>">Edit</a></td>
                     </tr>
                 <?php
                 }
