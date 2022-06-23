@@ -1,11 +1,11 @@
 <?php
 	require_once '../../BusinessServiceLayer/controller/BookController.php';	
 
-	$booking = new BookController();
+	$edit = new controller();
 
 	if(isset($_POST['edit']))
 	{
-  		$booking->edit();
+  		$edit->edit();
 	}
 ?>
 <!DOCTYPE html>
