@@ -236,7 +236,7 @@ body{ background-color: #7EDADB }
 <center>
 <br>
   <div class="dropdown">
-    <button class="dropbtn">Select an Option:</button>
+    <button class="dropbtn">Select an Option</button>
      <div id="myDropdown" class="dropdown-content">
        <a href="In_Item.php">In-Item</a>
        <a href="Out_Item.php">Out-Item</a>
@@ -267,7 +267,7 @@ body{ background-color: #7EDADB }
 </div>
   <?php 
 
-$connection = mysqli_connect("localhost","root","","myDatabase");
+$connection = mysqli_connect("localhost:3307","root","","mydatabase2");
 
 if(!$connection)
 {

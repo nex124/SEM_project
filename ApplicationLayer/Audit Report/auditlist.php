@@ -50,6 +50,9 @@ $audit = new auditcontroller();
 		.editbtn{
 			text-decoration: none;
 		}
+		.viewbtn{
+			text-decoration: none;
+		}
 		
 	</style>
 	<!-- 1. HEADER-->
@@ -125,6 +128,12 @@ $audit = new auditcontroller();
 			}
 			?>
 		</tr>
+		<tr>
+		<td colspan="5"style="text-align: center"><i class="fa fa-edit"></i>
+			<input class="button" type="button" value="Print" onclick="document.location='printauditreport.php'">
+			</td>
+		</tr>
+		</form>
 	</table>
 <!--FORM-->
 
