@@ -113,7 +113,7 @@
 		</tr>
         <tr>
 			<th>Booking Time:</th>
-			<td input width="100%"><input type="time" name="BookingTime" </td>
+			<td input width="100%"><input type="time" name="BookingTime"></td>
 		</tr>
         <tr>
 			<th>Pickup Date:</th>

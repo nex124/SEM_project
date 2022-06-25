@@ -8,6 +8,32 @@ if(isset($_POST['Add']))
     $inventory->add();
 }
 
+
+if(isset($_POST['search']))
+{
+
+    $valueToSearch = $_POST['valueToSearch'];
+    // search in all table columns
+    // using concat mysql function
+    $query = "SELECT * , qtreceived * unitPrice as total FROM `inventory` WHERE CONCAT(`ItemID`, `itemName`, `dateOrder`, `companyName`) LIKE '%".$valueToSearch."%'";
+    $search_result = filterTable($query);
+}
+else
+{
+ $query= "SELECT ItemID, itemName, qtorder, qtreceived, unitPrice, qtreceived * unitPrice as total, location, dateOrder, 
+ dateArrived, companyName, companyAddress, senderName, truckPlateNo FROM inventory;"; 
+ $search_result = filterTable($query);
+}
+
+
+ function filterTable($query)
+ {
+   $connection = mysqli_connect("localhost:3307","root","","mydatabase2"); 
+   $filter_Result = mysqli_query($connection, $query);
+   return $filter_Result;
+
+ }
+
 ?>
 
 <head>
@@ -211,40 +237,6 @@ body{ background-color: #7EDADB }
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
 
-.button {
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-
-.button1 {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #4CAF50;
-}
-
-.button1:hover {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.button2 {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #008CBA;
-}
-
-.button2:hover {
-  background-color: #008CBA;
-  color: white;
-}
 </style>
 </head>
 
@@ -279,9 +271,11 @@ body{ background-color: #7EDADB }
        <a href="delete_Item.php">Delete Item</a>
     </div>
   </div>
-  <button onclick="document.location='filter.php'">Filter Search</button>
-  
+<br><br>
 
+<form action="filter.php" method="POST">
+<input type="text" name="valueToSearch" placeholder="Value To Search"><br><br> 
+<input type="submit" name="search" value="Filter"><br><br>
 </center>
 </div>
 <!--DISPLAY-->  
@@ -303,44 +297,32 @@ body{ background-color: #7EDADB }
 	<th>ACTION</th>
   </tr> 
 </div>
-  <?php 
 
-$connection = mysqli_connect("localhost:3307","root","","mydatabase2");
+<?php
 
-if(!$connection)
-{
-	echo "Database connection failed...";
-}
-
-$retrive = mysqli_query($connection, "SELECT ItemID, itemName, qtorder, qtreceived, unitPrice, qtreceived * unitPrice as total, location, dateOrder, 
-                        dateArrived, companyName, companyAddress, senderName, truckPlateNo FROM inventory ORDER BY dateArrived DESC");
-?>
-			<?php
-                while($row = mysqli_fetch_array($retrive))
-                {
-                    ?>
-                    <tr>
-                    <td><?= $row['ItemID'];?></td>
-                    <td><?= $row['itemName'];?></td>
-					<td><?= $row['qtorder'];?></td>
-                    <td><?= $row['qtreceived'];?></td>
-					<td><?= $row['unitPrice'];?></td>
-                    <td><?= $row['total'];?></td>
-					<td><?= $row['location'];?></td>
-                    <td><?= $row['dateOrder'];?></td>
-					<td><?= $row['dateArrived'];?></td>
-                    <td><?= $row['companyName'];?></td>
-					<td><?= $row['companyAddress'];?></td>
-                    <td><?= $row['senderName'];?></td>
-					<td><?= $row['truckPlateNo'];?></td>
-					<td><a href="editItem.php?ItemID=<?php echo $row['ItemID']; ?>">Edit</a></td>
-                    </tr>
-                <?php
-                }
-            
-                ?>
+        while ($row = mysqli_fetch_assoc($search_result)){
+            ?>
+            <tr>
+            <td><?= $row['ItemID'];?></td>
+            <td><?= $row['itemName'];?></td>
+            <td><?= $row['qtorder'];?></td>
+            <td><?= $row['qtreceived'];?></td>
+            <td><?= $row['unitPrice'];?></td>
+            <td><?= $row['total'];?></td>
+            <td><?= $row['location'];?></td>
+            <td><?= $row['dateOrder'];?></td>
+            <td><?= $row['dateArrived'];?></td>
+            <td><?= $row['companyName'];?></td>
+            <td><?= $row['companyAddress'];?></td>
+            <td><?= $row['senderName'];?></td>
+            <td><?= $row['truckPlateNo'];?></td>
+            <td><a href="editItem.php?ItemID=<?php echo $row['ItemID']; ?>">Edit</a></td>
+            </tr>
+        <?php
+            }
+    ?>  
                </table>
-
+        </form>
 <div> 
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> 
 <!--FOOTER-->
