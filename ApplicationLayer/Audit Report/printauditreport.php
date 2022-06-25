@@ -1,82 +1,69 @@
 <?php
 require_once '../../BusinessServiceLayer/controller/AuditReportController.php';
 
-$audit = new auditcontroller();
+$audit = new auditcontroller();	
 
-if(isset($_POST['Submit'])){
-   
-    $audit->add();
-	
-}
 ?>
+
 
 <!DOCTYPE html>
 <html>
 <head>
 	<link rel="stylesheet" href="../../css/allExcludeLogin.css">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-	<title>IVMS | Audit Report (Form)</title>
-	<style type="text/css">
+	<title>IVMS | Print Audit Report</title>
+	<style>
 	body {
   margin: 0;
 }
+
 		table{
-		text-align: left;
-		width: 35%;
+		width: 40%;
 		margin-left: auto;
         margin-right: auto;
         margin-top: -140px;
         margin-bottom: 20px;
+
+	}
+	td{
+		text-align: center;
+		padding-top: 10px;
+		padding-bottom: 10px;
 	}
 
-		input[type=text],[type=date],select[name=status]  {
-		  width: 100%;
-		  height: 33px;
-		  margin: 8px 0px;
-		  margin-left: 0px;
-		  box-sizing: border-box;
-		}
 
-		input[type=file]{
-		  width: 100%;
-		  height: 33px;
-		  margin: 8px 0px;
-		  padding-top: 7px;
-		  box-sizing: border-box;
-		}
-
-		th{
-			width: 20%;
-		}
-
-		.size{width:100%; height: 100px}
-
-		.button{
-			width: 25%;
-			height: 40px;
+		.size{
+			width:50%; 
+			height: 100px
 		}
 		.footer{
-			height:85px;
+			height:87px;
 		}
 		.activeNav {
 		  background-color: #7EDADB;
 		}
+
 		.auditmenu a{
 			width: 10%;
 			height: 40px;
 		}
-		
+		.editbtn{
+			text-decoration: none;
+		}
+		.viewbtn{
+			text-decoration: none;
+		}
 		
 	</style>
 	<!-- 1. HEADER-->
 	<div class="header" >
-	<h1 >AUDIT REPORT</h1>
+	<h1>AUDIT REPORT</h1>
 	</div>
 	<!-- SAMPAI SINI -->
 </head>
 <body>
 	<!-- 2. NAVIGATION BAR-->
-	<ul>
+  <ul>
 
   <li><a href="http://localhost/ivms/login/Admin%20login/h.php">HOME</a></li>
   <li><a href="http://localhost/IVMS/ApplicationLayer/ManageStaffInformation/myInfo.php">STAFF</a></li>
@@ -89,31 +76,59 @@ if(isset($_POST['Submit'])){
 	<!--SAMPAI SINI-->
 	
 	<br><br>
-<div style="background-color:white; padding-bottom: 3%; margin-left:0px; margin-right:0px; margin-top: 25px"  >
-<h2><center><br>&nbsp PRINT AUDIT REPORT</center></h2>
+<div style="background-color:white; padding-bottom: 8%; margin-left:0px; margin-right:0px; margin-top: 25px"  >
+<h2><center><br><br><br>&nbsp PRINT AUDIT REPORT</center></h2>
 
 <!--AUDIT MENU-->
-<div class="auditmenu" style="margin-top: 5%;">
-    <a class="button" href="auditreport.php" style="background-color: grey;">Add Report</a><br>
-    <a class="button" href="auditlist.php" >View Report</a><br>
+<div class="auditmenu">
+    <a class="button" href="auditreport.php">Add Report</a><br>
+    <a class="button" href="auditlist.php" style="background-color: grey;">View Report</a><br>
     <a class="button"  href="deleteauditreport.php">Delete Report</a>
-    <a class="button" href="printauditreport.php" style="background-color: grey;">Print Report</a><br>
 </div>
 <!--SAMPAI SINI-->
 
 <!--FORM-->
-<!--TO FILL IN DATA -->
+<!--TO RETRIEVE DATA-->
 <form action="" method="post">
+	
 	<table>
 		<tr>
-			<th>Audit Report ID</th>
-			<td width="100%"><input type="text" name="audit_report_id" placeholder="Audit Report ID"><td>
-		</tr>
-			</td>
+				<td style="text-align: center; background-color: black; color:white;">Audit ID</td>
+				<td style="text-align: center;background-color: black; color:white;border: none;">Report ID</td>
+				<td style="text-align: center;background-color: black; color:white;">Description</td>
+				<td style="text-align: center; width: 100px;background-color: black; color:white;">Date</td>
+				<td style="text-align: center;background-color: black; color:white;">Status</td>
 		</tr>
 		<tr>
-			<td colspan="3" style="text-align: center; padding-top: 10px;">
-			<i class="fa fa-save" style="padding-right: 10px;"></i> <input class="button" type="submit" name="Submit" value="Print">
+			<?php
+			$connection = mysqli_connect("localhost","root","","myDatabase");
+
+			if (!$connection)
+			{
+				echo "Database connection failed";
+			}
+
+			$retrieve = mysqli_query($connection, "SELECT * FROM `auditreport`");
+
+			?>
+
+			<?php
+			while ($row = mysqli_fetch_array($retrieve)) {
+				?>
+				<tr>
+				<td><?=$row['Audit_id'];?></td>
+				<td><?=$row['report_id'];?></td>
+				<td><?=$row['Audit_name'];?></td>
+				<td><?=$row['Audit_date'];?></td>
+				<td><?=$row['Audit_result'];?></td>
+			</tr>
+				<?php
+			}
+			?>
+		</tr>
+		<tr>
+            <td colspan="5"style="text-align: center"><i class="fa fa-edit"></i>
+			<button class="button"onclick="window.print()">Print</button>
 			</td>
 		</tr>
 		</form>
@@ -124,5 +139,6 @@ if(isset($_POST['Submit'])){
 </div>
 <div class="footer"></div>
 <!-- SAMPAI SINI -->
+</script>
 </body>
 </html>

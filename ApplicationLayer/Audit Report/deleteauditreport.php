@@ -104,7 +104,7 @@ if(isset($_POST['delete']))
                 <td><center>Enter the Audit ID:</center></td>
             </tr>
             <tr>
-                <td><input class="userin" type="text" name="audit_report_id">&nbsp&nbsp&nbsp<input class="delbtn" type="submit" name="delete" value="Delete"></td>
+                <td><input class="userin" type="text" name="audit_report_id"><input class="delbtn" type="submit" name="delete" value="Delete"></td>
                 <td></td>
                 
         </tr>

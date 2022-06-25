@@ -117,7 +117,7 @@
 		</tr>
         <tr>
 			<th>Pickup Date:</th>
-			<td><input width="100%" type="date" name="PickupDate"></td>
+			<td><input width="100%" type="date" name="PickUpDate"></td>
 		</tr>
 		<tr>
 			<td colspan="3" style="text-align: center; padding-top: 10px;">
