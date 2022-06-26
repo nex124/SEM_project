@@ -191,12 +191,15 @@ h2{font-family: Myriad Pro Light;}
 				<br><h2 style="text-align: center;">INVENTORY IN-ITEM</h2><br>
 
 				<center>
+
+        <!---SEARCH FUNCTION--->
 				<div class="search-container">
     <form action="/action_page.php">
 				<input  type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by ITEM ID..." title="Type in a name">
 				<button type="submit"><i class="fa fa-search"></i></button>
 </div>
-</form>
+      <!---SEARCH FUNCTION--->
+<form>
 </center><br><br>
 
 				<th>ITEM ID</th>
@@ -258,8 +261,12 @@ if(!$connection)
             <table>
             <tr>
 				<th colspan="4" style="text-align:center; padding-right: 462px">TOTAL GRAND PRICE(RM):</th>
-            	<td colspan="5" style="text-align:right; padding-right: 90px"><?= $row['TotalGrandPrice'];?></td> <th colspan="5" style="text-align:left; padding-left: 550px"><button onclick="window.print()">Print this page</button></th>
+            	<td colspan="5" style="text-align:right; padding-right: 90px"><?= $row['TotalGrandPrice'];?></td> 
+              <!--Print function-->
+              <th colspan="5" style="text-align:left; padding-left: 550px"><button onclick="window.print()">Print this page</button></th>
         	</tr>
+              <!--End of Print function-->
+
   
                 <?php
                 }
