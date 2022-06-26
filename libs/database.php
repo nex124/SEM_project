@@ -10,7 +10,7 @@ class DB
   public static function connect($value='')
   {
     // create a new PDO connection
-    $pdo = new PDO(DB_TYPE.':host='.DB_HOST.';dbname='.DB_NAME, DB_USER, DB_PASS);
+    $pdo = new PDO('mysql:host=localhost:3307;dbname=mydatabase2;dbuser= ;dbpass=');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     return $pdo;
@@ -37,7 +37,7 @@ class DB
 <?php 
 
 
-$connection = mysqli_connect("localhost","root","","mydatabase");
+$connection = mysqli_connect("localhost:3307","root","","mydatabase2");
 
 
 if(!$connection)

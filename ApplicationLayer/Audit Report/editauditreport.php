@@ -105,24 +105,24 @@
 
 		<tr>
 			<th>Audit Report ID</th>
-			<td width="100%"><input type="text" name="audit_report_id" placeholder="Audit Report ID"><td>
+			<td width="100%"><input type="text" name="audit_report_id" placeholder="Audit Report ID" required><td>
 		</tr>
 		<tr>
 			<th>Report ID</th>
-			<td width="100%"><input type="text" name="report_id" placeholder="Report ID"></td>
+			<td width="100%"><input type="text" name="report_id" placeholder="Report ID" required></td>
 		</tr>
 		<tr>
 			<th>Description</th>
-			<td width="100%"><input type="text" name="description" placeholder="Report Description"></td>
+			<td width="100%"><input type="text" name="description" placeholder="Report Description" required></td>
 		</tr>
 		<tr>
 			<th>Date</th>
-			<td><input width="100%" type="date" name="reportdate"></td>
+			<td><input width="100%" type="date" name="reportdate" required></td>
 		</tr>
 		<tr>
 			<th>Report Status</th>
 			<td>
-				<select name="status">
+				<select name="status" required>
 					<option value="Unqualified opinion">Unqualified opinion</option>
 					<option value="Qualified opinion">Qualified opinion</option>
 					<option value="Adverse Opinion">Adverse Opinion</option>

@@ -32,10 +32,10 @@ class bookingmodel {
 	function editBooking($BookingID,$id,$ItemID,$ItemQuantity,$DateBooking,$BookingTime,$PickUpDate)
 	{
 		$sql = "BEGIN;
-				UPDATE booking SET BookingID='$BookingID',  id='$id', ItemID='$ItemID', ItemQuantity= '$ItemQuantity',DateBooking= '$DateBooking', BookingTime= '$BookingTime', PickUpDate= '$PickUpDate'  WHERE id='$id';
+				UPDATE booking SET BookingID='$BookingID',  id='$id', ItemID='$ItemID', ItemQuantity= '$ItemQuantity',DateBooking= '$DateBooking', BookingTime= '$BookingTime', PickUpDate= '$PickUpDate'  WHERE BookingID='$BookingID';
 				COMMIT";
 				
-		DB::run($sql);
+		return DB::run($sql);
 
 		if(DB::run($sql))
 		{

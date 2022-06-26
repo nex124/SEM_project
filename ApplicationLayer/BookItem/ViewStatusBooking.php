@@ -176,7 +176,6 @@ h2{font-family: Myriad Pro Light;}
 	<center>
 		<button class="btn active"><a href="http://localhost/IVMS/ApplicationLayer/BookItem/BookItem.php">View Item</button>
 		<button class="btn active"><a href="http://localhost/IVMS/ApplicationLayer/BookItem/AddBookForm.php">Add Booking</a></button>
-		<button class="btn active"><a href="http://localhost/IVMS/ApplicationLayer/BookItem/EditBookForm.php">Edit Booking</a></button>
     <button class="btn active"><a href="http://localhost/IVMS/ApplicationLayer/BookItem/ViewStatusBooking.php" target="_blank">View Booking </a></button>
   </center>
 		  <br><br>
@@ -194,6 +193,7 @@ h2{font-family: Myriad Pro Light;}
 				<th>Date Booking</th>
 				<th>Booking Time</th>
 				<th>Pickup Date</th>
+				<th>Edit</th>
 				
 			</tr>
 			<?php 
@@ -216,11 +216,12 @@ $row= mysqli_fetch_array($retrieve);
                     <tr>
                     <td><?= $row['BookingID'];?></td>
                     <td><?= $row['ItemID'];?></td>
-										<td><?= $row['id'];?></td>
+					<td><?= $row['id'];?></td>
                     <td><?= $row['ItemQuantity'];?></td>
                     <td><?= $row['DateBooking'];?></td>
                     <td><?= $row['BookingTime'];?></td>
                     <td><?= $row['PickUpDate'];?></td>
+					<td><a class="editbtn" href="editbooking.php?BookingID=<?php echo $row["BookingID"]; ?>">Edit</a></td>
                     </tr>
                 <?php
                 }
